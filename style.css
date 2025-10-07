@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery-container {
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.gallery {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 33.333%;
+    padding: 10px;
+}
+
+.slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.03);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.nav-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.pager {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.page-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #667eea;
+    transform: scale(1.2);
+}
+
+.page-info {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .slide {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide {
+        flex: 0 0 100%;
+    }
+
+    .gallery-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .slide img {
+        height: 150px;
+    }
+}
